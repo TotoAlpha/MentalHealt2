@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold 
+    hover:bg-primary-700 transform hover:scale-105 transition-all duration-300
+    shadow-lg hover:shadow-xl focus:ring-4 focus:ring-primary-200 focus:outline-none;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:transform hover:scale-[1.02];
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-b from-primary-50/50 to-white;
+  }
+
+  .gradient-bg-secondary {
+    @apply bg-gradient-to-b from-secondary-50/50 to-white;
+  }
+
+  .gradient-bg-accent {
+    @apply bg-gradient-to-b from-accent-50/50 to-white;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
